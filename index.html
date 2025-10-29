@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Orange Grand | Today's Special</title>
+  <style>
+    :root {
+      --orange-main: #ff6600;
+      --orange-light: #ffa64d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--orange-light), var(--orange-main));
+      color: white;
+      height: 100dvh; /* Modern mobile height fix */
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 100%;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
+    }
+
+    /* --- Header --- */
+    .brand-card {
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand-card img {
+      height: clamp(40px, 10vw, 60px);
+      width: auto;
+    }
+
+    .brand-card h1 {
+      font-size: clamp(1.8em, 6vw, 2.5em);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* --- Title --- */
+    h2 {
+      font-size: clamp(1.4em, 5vw, 1.8em);
+      margin-top: 8px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 3px;
+      width: 60%;
+      background: linear-gradient(90deg, #fff, #ffe0b3, #fff);
+      border-radius: 2px;
+    }
+
+    /* --- Dish name --- */
+    .dish-name {
+      display: block;
+      font-weight: 900;
+      font-size: clamp(1.8em, 7vw, 2.4em);
+      color: #fff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.7),
+                   0 0 25px rgba(255,150,50,0.9);
+      margin-bottom: 8px;
+    }
+
+    /* --- ✅ Fixed Video --- */
+    .video-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1; /* Let it take remaining height */
+      max-height: 45dvh; /* Restrict to 45% of screen height */
+    }
+
+    video {
+      width: 90%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      object-fit: contain; /* Keeps proportions correct */
+      background: #000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    p {
+      font-size: clamp(0.9em, 3.5vw, 1em);
+      opacity: 0.9;
+      margin: 6px 0;
+    }
+
+    footer {
+      font-size: clamp(0.8em, 3vw, 0.9em);
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 400px) {
+      .brand-card { flex-direction: column; gap: 4px; }
+      .video-wrapper { max-height: 40dvh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Header -->
+    <div class="brand-card">
+      <img src="edited-photo.png" alt="Orange Grand Logo">
+      <h1>Orange Grand</h1>
+    </div>
+
+    <!-- Title -->
+    <div>
+      <h2>Today's Special</h2>
+      <span class="dish-name">Upma Ravva Dosa</span>
+    </div>
+
+    <!-- ✅ Video container -->
+    <div class="video-wrapper">
+      <video controls autoplay muted playsinline loop preload="metadata">
+        <source src="test-ravva.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Footer -->
+    <div>
+      <p>Rich, buttery, and bursting with coastal flavour.</p>
+      <footer>Come back tomorrow for a new special!</footer>
+    </div>
+  </div>
+</body>
+</html>
